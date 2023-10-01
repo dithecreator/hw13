@@ -105,5 +105,6 @@ int main() {
     cin >> my2;
     cout << my3;
     
-    myString result = returnString(my);
+//    myString result = returnString(my);
+    myString result = move(my);
 }
