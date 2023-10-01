@@ -34,7 +34,7 @@ public:
     void MyDelChr(char c); // удаляет указанный символ
     int MyStrCmp(myString &b); // сравнение строк
     static void createdObjects(); //подсчёт количества созданных обьектов
-    myString(const myString&); // конструктор копирования
+    myString(const myString&) = delete; // конструктор копирования
     myString(myString&& obj); //конструктор переноса
     char& operator[](const unsigned int index);
     void operator()();
@@ -43,7 +43,8 @@ public:
     void setLength(int);
     void setString(char*);
     myString& operator ->();
-    myString& operator=(const myString& right);
+    myString& operator=(const myString& right) = delete;
+    myString& operator=(myString&& right);
     myString returnString(myString obj);
     ~myString();
 

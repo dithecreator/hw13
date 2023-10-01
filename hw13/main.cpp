@@ -94,16 +94,16 @@ int main() {
 //    my6.print();
     
     myString my("Hello");
-    myString my1 = my;
-    my1.print();
+//    myString my1 = my;
+//    my1.print();
     
-    myString my2("Kitty");
-    myString my3("!");
-    cout << my2;
-    cout << my3 << endl;
-    cout << endl;
-    cin >> my2;
-    cout << my3;
+//    myString my2("Kitty");
+//    myString my3("!");
+//    cout << my2;
+//    cout << my3 << endl;
+//    cout << endl;
+//    cin >> my2;
+//    cout << my3;
     
 //    myString result = returnString(my);
     myString result = move(my);

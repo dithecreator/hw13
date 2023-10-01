@@ -138,12 +138,12 @@ int myString:: MyStrCmp(myString &b){
 }
 
 
-myString::myString(const myString& newStr)
-{
-    length = newStr.length;
-    str = new char[strlen(newStr.str) + 1];
-    strcpy(str, newStr.str);
-}
+//myString::myString(const myString& newStr)
+//{
+//    length = newStr.length;
+//    str = new char[strlen(newStr.str) + 1];
+//    strcpy(str, newStr.str);
+//}
 
 
 char& myString:: operator[](const unsigned int index){
@@ -179,7 +179,7 @@ void myString:: setString(char* s){
 }
 
 
- myString& myString:: operator =(const myString& right){
+ myString& myString:: operator=(myString&& right){//move operator
     if(this != &right){
         delete[] str;
         char* newStr = new char[right.length];
@@ -189,7 +189,8 @@ void myString:: setString(char* s){
     }
      return *this;
 }
-myString:: myString(myString&& obj){
+
+myString:: myString(myString&& obj){// move constructor
     length = obj.length;
     obj.length = 0;
     str = obj.str;
